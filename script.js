@@ -115,8 +115,6 @@ window.onload = function() {
             path = path.slice(1);
         }
 
-        console.log(path);
-
         var pathArray = path.split( '/' );
 
         return (pathArray.length == 2);
@@ -147,16 +145,11 @@ window.onload = function() {
                 return;
             }
 
-
             var isHidden = $wrapper.is(':hidden');
-            
-            console.log("hidden:" + isHidden);
-            console.log("home:" + isHomeRepository());
-
 
             if (isHomeRepository() && isHidden) {
                 $wrapper.show();   
-            } else if (!isHidden) {
+            } else if (!isHidden && !isHomeRepository()) {
                 $wrapper.hide();    
             }
         })
