@@ -47,8 +47,6 @@ window.onload = function() {
         return el
     }
 
-    desktopMode();	
-
     function desktopMode() {
         
         var pageHead = document.querySelector('.pagehead-actions');
@@ -93,11 +91,84 @@ window.onload = function() {
 
         var newItem = createCustomElem({
             'tagName': 'li',
+            'attributes': {
+                'class': 'github-share-wrapper',
+            },
             'children': [buttonsWrapper]
         });
 
         //insert before 
         pageHead.insertBefore(newItem, pageHead.firstChild)
     }
+
+    ////optional hide share buttons on every page except repository home page
+    // Github for the moment uses pjax we will bind on pjax:complete and check URL path
+
+    //FIXME
+    function isHomeRepository() {
+        var path = window.location.pathname;
+        //trim 
+        if(path.charAt( path.length-1 ) == "/") {
+            path = path.slice(0, -1);
+        }
+        if(path.charAt(0) == "/") {
+            path = path.slice(1);
+        }
+
+        console.log(path);
+
+        var pathArray = path.split( '/' );
+
+        return (pathArray.length == 2);
+    }   
+
+    function jQueryDefined(){
+        return (typeof jQuery !== "undefined");
+    }
+
+    function toggleButtons(){
+
+        if (!jQueryDefined()) {
+            return;
+        }
+
+        //Bind on pjax:complete
+        $(document).on('pjax:complete', function() {
+            var $wrapper = $('.github-share-wrapper');
+
+
+            if (!$wrapper.length) {
+                //special case homepage from another page using pjax
+                
+                if (isHomeRepository()) {
+                    desktopMode();  
+                }
+
+                return;
+            }
+
+
+            var isHidden = $wrapper.is(':hidden');
+            
+            console.log("hidden:" + isHidden);
+            console.log("home:" + isHomeRepository());
+
+
+            if (isHomeRepository() && isHidden) {
+                $wrapper.show();   
+            } else if (!isHidden) {
+                $wrapper.hide();    
+            }
+        })
+    }
+
+    if (isHomeRepository()) {
+        desktopMode();  
+    }
+
+    toggleButtons();
+    
+
+
 
 }
