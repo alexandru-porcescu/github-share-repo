@@ -1,15 +1,11 @@
 //https://gist.github.com/MoOx/8614711
 window.onload = function() {
 
-
-    //inject plugin js
-    var s = document.createElement('script');
-    s.src = "//static.addtoany.com/menu/page.js";
-
     //share plugin config
     var a2a_config = a2a_config || {};
     a2a_config.onclick = 1;
-    a2a_config.exclude_services = ["aim", "amazon_wish_list", "baidu", "balatarin", "bibsonomy", "bitty_browser", "blinklist", "blogger_post", "blogmarks", "bookmarks.fr", "box_net", "care2_news", "citeulike", "diaspora", "dihitt", "dzone", "fark", "jamespot", "kakao", "kindle_it", "line", "livejournal", "mendeley", "meneame", "mixi", "myspace", "netlog", "netvouz", "newsvine", "nujij", "odnoklassniki", "oknotizie", "outlook.com", "pinboard", "plurk", "printfriendly", "protopage_bookmarks", "pusha", "qzone", "rediff_mypage", "renren", "segnalo", "slashdot", "stumbleupon", "stumpedia", "svejo", "symbaloo_feeds", "tuenti", "tumblr", "twiddla", "typepad_post", "viadeo", "vk", "wanelo", "webnews", "wordpress", "wykop", "xing", "yahoo_bookmarks", "youmob", "diary_ru"];
+    a2a_config.exclude_services = ["aim", "pinterest", "amazon_wish_list", "baidu", "yummly", "balatarin", "bibsonomy", "yahoo_messenger", "bitty_browser", "rediff", "print", "blinklist", "blogger_post", "blogmarks", "bookmarks.fr", "box_net", "care2_news", "citeulike", "diaspora", "dihitt", "dzone", "fark", "jamespot", "kakao", "kindle_it", "line", "livejournal", "mendeley", "meneame", "mixi", "myspace", "netlog", "netvouz", "newsvine", "nujij", "odnoklassniki", "oknotizie", "outlook.com", "pinboard", "plurk", "printfriendly", "protopage_bookmarks", "pusha", "qzone", "rediff_mypage", "renren", "segnalo", "slashdot", "stumbleupon", "stumpedia", "svejo", "symbaloo_feeds", "tuenti", "tumblr", "twiddla", "typepad_post", "viadeo", "vk", "wanelo", "webnews", "wordpress", "wykop", "xing", "yahoo_bookmarks", "youmob", "diary_ru"];
+    a2a_config.track_links = 'googl';
 
     window.a2a_config = a2a_config;
 
