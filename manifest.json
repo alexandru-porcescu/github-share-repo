@@ -1,8 +1,8 @@
 {
     "name": "Github Share Repository ",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
-    "description": "Github Share Repository offers a flexible way to share any Github pages to Twitter, HackerNews, Reddit etc. easily.",
+    "description": "Github Share Repository offers a flexible way to share Github repositories to Twitter, HackerNews, Reddit etc. easily.",
     "icons": {
         "16": "/img/icons/icon_16.png",
         "36": "/img/icons/icon_36.png",
